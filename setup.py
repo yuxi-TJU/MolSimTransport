@@ -1,0 +1,39 @@
+from setuptools import setup, find_packages
+
+setup(
+    name='MolSimTransport',
+    version='1.1',
+    packages=find_packages(),
+    include_package_data=True,
+    install_requires=[
+        'numpy',
+        'scipy',
+        'matplotlib',
+        'rdkit',
+        'tblite',
+    ],
+    entry_points={
+        'console_scripts': [
+            'L1_EHT=MolSimTransport.l1_bare_mol_eht:run_eht_wba',
+            'L1_XTB=MolSimTransport.l1_bare_mol_xtb:run_xtb_wba',
+            'L2_Align=MolSimTransport.l2_em_align:main',
+            'L2_Trans=MolSimTransport.l2_em_trans:main',
+            'L3_Trans=MolSimTransport.l3_junction_trans:main',
+            'L3_EEF=MolSimTransport.l3_junction_with_eef:main',
+        ],
+    },
+    
+    author='Xi Yu, Qiang Qi and Xuan Ji',
+    author_email='xi.yu@tju.edu.cn',
+    description='A python package for computing the transport of molecular junctions at multiple scales',
+    # long_description=open('README.md').read(),
+    # long_description_content_type='text/markdown',
+    url='https://github.com/yuxi-TJU/MolSim-Transport',
+
+    classifiers=[
+        'Programming Language :: Python :: 3',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: POSIX :: Linux',
+    ],
+    python_requires='>=3.6',
+)
