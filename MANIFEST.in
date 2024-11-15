@@ -1,0 +1,6 @@
+include README.md
+include setup.py
+include MolSimTransport/utils/*.json
+recursive-include MolSimTransport/utils/atomic_data *
+recursive-include share *
+recursive-include test_files *

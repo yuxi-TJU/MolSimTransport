@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: MolSimTransport
+Version: 1.0.2
+Summary: A python package for quickly calculating the transport properties of molecular junctions at multiple scales
+Home-page: https://github.com/yuxi-TJU/MolSim-Transport
+Author: Xi Yu, Qiang Qi and Xuan Ji
+Author-email: xi.yu@tju.edu.cn
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Requires-Python: >=3.9
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Requires-Dist: rdkit
+Requires-Dist: tblite
+Requires-Dist: importlib.resources
