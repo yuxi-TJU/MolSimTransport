@@ -1,4 +1,4 @@
-# MolSimTransport v1.0.2
+# **_MolSimTransport v1.0.2_: A Python package designed for the efficient calculation of transport properties in molecular junctions**
 
 OneDrive link: https://1drv.ms/u/c/8ba50a0504e6a517/EVX0-DN_ICBItABk9WloI8QBIFrdweD5uGhCsalizM3XIA?download=1
 
@@ -13,7 +13,6 @@ Junction templates for different interfaces, pre-calculated Hamiltonian and surf
 -- The /test_file directory holds test files for all three schemes, consistent with those provided in the manual.
 
 
-# **_MolSimTransport_: A Python package designed for the efficient calculation of transport properties in molecular junctions**
 
 ## **Introduction**
 _**MolSimTransport**_, a highly efficient computational scheme within the **Question-Driven Hierarchical Computation (QDHC)** framework, has been developed by [Professor Yu Xi's research group](http://39.107.98.173/) at Tianjin University. This scheme integrates several transport models across various levels of approximation, complemented by computational methods of different accuracies. It provides a comprehensive, multi-level solution for analyzing the charge transport properties in molecular junctions.
