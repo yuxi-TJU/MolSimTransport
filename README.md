@@ -64,7 +64,7 @@ To validate the performance of _**MolSim-Transport**_, it was applied to the fol
 
 
 
-**The package's OneDrive download link:** https://1drv.ms/u/c/8ba50a0504e6a517/EVX0-DN_ICBItABk9WloI8QBIFrdweD5uGhCsalizM3XIA?download=1
+**Download the package's using this OneDrive link:** https://1drv.ms/u/c/8ba50a0504e6a517/EVX0-DN_ICBItABk9WloI8QBIFrdweD5uGhCsalizM3XIA?download=1
 
 - The **/MolSimTransport** directory contains the calculation scripts and atomic data files.
 
