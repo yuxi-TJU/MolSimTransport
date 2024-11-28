@@ -29,7 +29,7 @@ A detailed working protocol for the study of the transport property of 1,3-BDT m
 
 
 ## Benchmark studies
-To validate the performance of _**MolSim-Transport**_, it was applied to the following six molecular junction transport cases from the literature, forming a comprehensive benchmark test. These carefully selected cases span all levels of the QDHC strategy, ensuring the breadth and typicality of the test. The rapid replication of these cases demonstrates the high efficiency of the QDHC strategy in handling problems with different precision requirements and its unique ability to capture key factors in the transport process.
+To validate the performance of _**MolSimTransport**_, it was applied to the following six molecular junction transport cases from the literature, forming a comprehensive benchmark test. These carefully selected cases span all levels of the QDHC strategy, ensuring the breadth and typicality of the test. The rapid replication of these cases demonstrates the high efficiency of the QDHC strategy in handling problems with different precision requirements and its unique ability to capture key factors in the transport process.
 
 ### System 1:  Controlled Quantum Interference in π-Stacked Dimers
 - **Reference**: [Nature Chemistry, 2016, 8 (12), 1099–1104.](https://www.nature.com/articles/nchem.2615)
@@ -74,4 +74,4 @@ To validate the performance of _**MolSim-Transport**_, it was applied to the fol
 
 - The `test_file` directory holds test files for all three schemes, consistent with those provided in the manual.
 
-- The `old-version-benchmark` directory contains benchmark test files from previous MATLAB versions, you can also find these files in the `matlab-old-version` branch.
+- The `old-version-benchmark` directory contains benchmark test files from previous MATLAB versions(some are showcased in this README). You can also find these files in the `matlab-old-version` branch.
