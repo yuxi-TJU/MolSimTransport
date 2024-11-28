@@ -3,7 +3,7 @@
 
 ## **Introduction**
 _**MolSimTransport**_, a highly efficient computational scheme within the **Question-Driven Hierarchical Computation (QDHC)** framework, has been developed by [Professor Yu Xi's research group](http://science.tju.edu.cn/info/1124/1632.htm) at Tianjin University. This scheme integrates several transport models across various levels of approximation, complemented by computational methods of different accuracies. It provides a comprehensive, multi-level solution for analyzing the charge transport properties in molecular junctions.
-![hierarchy](https://github.com/user-attachments/assets/0e808e7f-a88b-40fa-888c-6306fb95b362)
+![strategy](https://github.com/user-attachments/assets/6a5232da-9a3a-4e64-ac7a-145b7950ebff)
 
 The QDHC design in _**MolSim-Transport**_ bridges the theoretical gap between DFT+NEGF calculations on the full molecular devices and and simplified theoretical models, by encompassing a range of simplifications and approximations at various levels. Considering that the charge transport properties of molecular devices are jointly determined by the molecule, electrodes, and their interfacial interactions, the calculations accordingly span multiple physical scales from atoms to devices. Driven by the actual researching questions, this method selectively disregards minor factors being less impactful and only focuses on the primary ones that critically influence system behavior. Moreover, by effectively applying theoretical methods at different levels of approximation and precision, this strategy achieves greater efficiency while maintaining accuracy, thus enabling more effective exploration of charge transport behaviors in molecular junction systems.
 
