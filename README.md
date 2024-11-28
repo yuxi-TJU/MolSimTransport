@@ -9,7 +9,8 @@ The QDHC design in _**MolSim-Transport**_ bridges the theoretical gap between DF
 
 ## **Detailed Description of the QDHC Strategy**
 The core of the QDHC (Question-Driven Hierarchical Computation) strategy lies in the refined stratification and approximation strategies at two critical levels: defining the computational system scope and selecting computational methods. Considering that a typical molecular device consists of three parts: the molecule, the molecule-electrode interface, and the source/drain electrodes, the QDHC strategy requires researchers to select appropriate computational schemes and levels based on the actual researching objectives. MolSim-Transport offers three levels of schemes, 
-![scale](https://github.com/user-attachments/assets/fb541b24-14e0-490e-b0ef-f7d770ba3956)
+![scale](https://github.com/user-attachments/assets/7e787731-77b8-489b-9719-3e981e524ca6)
+
 ![Scheme Table](https://github.com/user-attachments/assets/5b1cef53-877b-46ad-96b3-8da0e2143c06)
 
 ## **The QDHC Model Framework**
