@@ -10,7 +10,7 @@ setup(
         'scipy',
         'matplotlib',
         'rdkit',
-        'tblite',
+        'tblite==0.3.0',
         'importlib.resources',
     ],
     entry_points={
