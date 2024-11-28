@@ -1,0 +1,25 @@
+Geometry = vaspFormat {
+<<< "pyridine-adatom-device.POSCAR"
+}
+
+Hamiltonian = xTB {
+  Method = "GFN1-xTB"
+  kPointsAndWeights = {
+       0.    0.    0.       1
+  }
+  Mixer = Broyden {
+    MixingParameter = 0.050000000000000001
+    InverseJacobiWeight = 1.0000000000000000E-002
+    MinimalWeight = 1.0000000000000000
+    MaximalWeight = 100000.00000000000
+    WeightFactor = 1.0000000000000000E-002
+  }
+}
+Options = {
+  WriteCharges = Yes
+  WriteHS = No
+  WriteRealHS = No
+}
+Analysis = {
+  WriteBandOut = Yes
+}
