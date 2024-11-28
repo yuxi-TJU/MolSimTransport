@@ -6,14 +6,12 @@ _**MolSimTransport**_, a highly efficient computational scheme within the **Ques
 
 ![hierarchy](https://github.com/user-attachments/assets/7115e50c-80f1-4f6e-99c2-22604429ae7a)
 
-
-
 The QDHC design in _**MolSim-Transport**_ bridges the theoretical gap between DFT+NEGF calculations on the full molecular devices and and simplified theoretical models, by encompassing a range of simplifications and approximations at various levels. Considering that the charge transport properties of molecular devices are jointly determined by the molecule, electrodes, and their interfacial interactions, the calculations accordingly span multiple physical scales from atoms to devices. Driven by the actual researching questions, this method selectively disregards minor factors being less impactful and only focuses on the primary ones that critically influence system behavior. Moreover, by effectively applying theoretical methods at different levels of approximation and precision, this strategy achieves greater efficiency while maintaining accuracy, thus enabling more effective exploration of charge transport behaviors in molecular junction systems.
 
 ## **Detailed Description of the QDHC Strategy**
 The core of the QDHC (Question-Driven Hierarchical Computation) strategy lies in the refined stratification and approximation strategies at two critical levels: defining the computational system scope and selecting computational methods. Considering that a typical molecular device consists of three parts: the molecule, the molecule-electrode interface, and the source/drain electrodes, the QDHC strategy requires researchers to select appropriate computational schemes and levels based on the actual researching objectives. MolSim-Transport offers three levels of schemes, 
 
-![Scheme Table](https://github.com/yuxi-TJU/MolSim-Transport/assets/68102657/0c693738-efcc-4a09-9723-256dff4b40b7)
+![Scheme Table](https://github.com/user-attachments/assets/5b1cef53-877b-46ad-96b3-8da0e2143c06)
 
 ## **The QDHC Model Framework**
 The QDHC model always adheres to a uniform structured workflow regardless of the precision level of simplification applied, which goes through an entire process from the initial geometric input final calculation of transport properties.
@@ -25,7 +23,7 @@ The QDHC model always adheres to a uniform structured workflow regardless of the
 5. Establishment of Device Green's Function
 6. Calculation of Transport Properties
 
-![flowchart](https://github.com/yuxi-TJU/Question-driven-Hierarchical-Transport-Model/assets/68102657/bac5855f-ecce-4467-a208-5a6b774f8ec0)
+![flowchart](https://github.com/user-attachments/assets/0892594f-5379-45d1-b0dc-40871419ba35)
 
 A detailed working protocol for the study of the transport property of 1,3-BDT molecule, known for its destructive quantum-interference feature, has been also posted to vividly demonstrated the proceeding process.
 ![workflow](https://github.com/yuxi-TJU/Question-oriented-Hierarchical-Transport-Model/assets/68102657/ad6b807a-0ff2-4671-bfeb-35191da5049a)
