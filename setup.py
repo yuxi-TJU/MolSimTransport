@@ -30,7 +30,7 @@ setup(
     
     package_data={
         'MolSimTransport.utils': ['*.json'], 
-        'share': ['*.xyz','*.dat', '*.mat'],
+        # 'share': ['*.xyz','*.dat', '*.mat'],
     },
 
     author='Xi Yu, Qiang Qi and Xuan Ji',
