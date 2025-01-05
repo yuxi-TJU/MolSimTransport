@@ -32,7 +32,7 @@ A detailed working protocol for the study of the transport property of 1,3-BDT m
 To validate the performance of _**MolSimTransport**_, it was applied to the following six molecular junction transport cases from the literature, forming a comprehensive benchmark test. These carefully selected cases span all levels of the QDHC strategy, ensuring the breadth and typicality of the test. The rapid replication of these cases demonstrates the high efficiency of the QDHC strategy in handling problems with different precision requirements and its unique ability to capture key factors in the transport process.
 
 ### System 1:  Controlled Quantum Interference in π-Stacked Dimers
-- **Reference**: [Nature Chemistry, 2016, 8 (12), 1099–1104.](https://www.nature.com/articles/nchem.2615)
+- **Reference**: [Nature Chemistry, 2016, 8 (12), 1099–1104.](https://www.nature.com/articles/nchem.2588)
 - **Model Treatment**: Bare molecule + EHMO.
 ![case1](https://github.com/user-attachments/assets/4f831fe5-934c-4dd3-a60a-8425baf48f60)
 
