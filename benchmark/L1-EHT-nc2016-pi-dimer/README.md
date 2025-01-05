@@ -9,4 +9,3 @@ This repository contains scripts for generating output files for different confi
 2. **Run the `plot.py` script:**
    - After running the `run_eht.sh` script, execute the `plot.py` script to visualize the results.
    - The script will generate plots based on the data saved in the `output` directory.
-"""
