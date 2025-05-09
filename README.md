@@ -5,7 +5,7 @@
 
 ### Download link 
 
- v1.0.2 [OneDrive Download link](https://1drv.ms/u/c/8ba50a0504e6a517/ER87VtJizbZMu8WJ0pdjCi4BKi4xc53XNm0uokhEmnEb9A?download=1)
+ `v1.0.2`:  [OneDrive Download link](https://1drv.ms/u/c/8ba50a0504e6a517/ER87VtJizbZMu8WJ0pdjCi4BKi4xc53XNm0uokhEmnEb9A?download=1)
 
 **Please download and extract the two electrode files separately into the directories `/share/l3_elec_large` and `/share/l3_elec_small`**
 
