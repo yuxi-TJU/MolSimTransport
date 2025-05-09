@@ -1,5 +1,9 @@
-![release](https://img.shields.io/badge/release-v1.0.3-orange)
-[![DOI](https://img.shields.io/badge/DOI-10.1021/acs.jctc.4c01711-blue)](https://pubs.acs.org/doi/10.1021/acs.jctc.4c01711)
+<p align="center">
+  <img src="https://img.shields.io/badge/release-v1.0.3-orange" alt="release">
+  <a href="https://pubs.acs.org/doi/10.1021/acs.jctc.4c01711">
+    <img src="https://img.shields.io/badge/DOI-10.1021/acs.jctc.4c01711-blue" alt="DOI">
+  </a>
+</p>
 
 # **MolSimTransport: A Python package designed for the efficient calculation of transport properties in molecular junctions**
 
