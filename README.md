@@ -5,9 +5,9 @@
 
 ### Download link 
 
-  [OneDrive Download link](https://1drv.ms/u/c/8ba50a0504e6a517/ER87VtJizbZMu8WJ0pdjCi4BKi4xc53XNm0uokhEmnEb9A?download=1)
+ v1.0.2 [OneDrive Download link](https://1drv.ms/u/c/8ba50a0504e6a517/ER87VtJizbZMu8WJ0pdjCi4BKi4xc53XNm0uokhEmnEb9A?download=1)
 
-Please download and extract the two electrode files separately into the directories `/share/l3_elec_large` and `/share/l3_elec_small`
+**Please download and extract the two electrode files separately into the directories `/share/l3_elec_large` and `/share/l3_elec_small`**
 
 ## **Introduction**
 _**MolSimTransport**_, a highly efficient computational scheme within the **Question-Driven Hierarchical Computation (QDHC)** framework, has been developed by [Professor Yu Xi's research group](http://science.tju.edu.cn/info/1124/1632.htm) at Tianjin University. This scheme integrates several transport models across various levels of approximation, complemented by computational methods of different accuracies. It provides a comprehensive, multi-level solution for analyzing the charge transport properties in molecular junctions.
