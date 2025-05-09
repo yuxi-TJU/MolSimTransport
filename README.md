@@ -3,13 +3,13 @@
 
 # **MolSimTransport: A Python package designed for the efficient calculation of transport properties in molecular junctions**
 
-### v1.0.3 Release Notes
+### **v1.0.3 Release Notes**
 
 **L1_XTB Module**: Added the ability to modify the coupling strength of the left and right electrodes separately using the `--CL` and `--CR` options (`-C` sets both simultaneously).
 
 **L3 Scheme**: Provided larger surface Green's function files for electrodes; users can select the appropriate electrode based on their needs
 
-### Download link 
+### **Download link**
 
  `v1.0.2`  [OneDrive Download link](https://1drv.ms/u/c/8ba50a0504e6a517/ER87VtJizbZMu8WJ0pdjCi4BKi4xc53XNm0uokhEmnEb9A?download=1)
 
