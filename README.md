@@ -5,9 +5,9 @@
 
 ### v1.0.3 Release Notes
 
-L1_XTB Module: Added the ability to modify the coupling strength of the left and right electrodes separately using the `--CL` and `--CR` options (`-C` sets both simultaneously).
+**L1_XTB Module**: Added the ability to modify the coupling strength of the left and right electrodes separately using the `--CL` and `--CR` options (`-C` sets both simultaneously).
 
-L3 Scheme: Provided larger surface Green's function files for electrodes; users can select the appropriate version based on their needs
+**L3 Scheme**: Provided larger surface Green's function files for electrodes; users can select the appropriate electrode based on their needs
 
 ### Download link 
 
