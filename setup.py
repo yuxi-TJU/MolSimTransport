@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='MolSimTransport',
-    version='1.0.2',
+    version='1.0.3',
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
@@ -30,10 +30,12 @@ setup(
     
     package_data={
         'MolSimTransport.utils': ['*.json'], 
-        # 'share': ['*.xyz','*.dat', '*.mat'],
+        'MolSimTransport.share.l3_elec_large':['*.dat', '*.mat'],
+        'MolSimTransport.share.l3_elec_small':['*.dat', '*.mat'],
+        'share': ['*.xyz','*.dat', '*.mat'],
     },
 
-    author='Xi Yu, Qiang Qi and Xuan Ji',
+    author='Xuan Ji, Qiang Qi, Yueqi Chen, Chen Zhou, Xi Yu',
     author_email='xi.yu@tju.edu.cn',
     description='A python package for quickly calculating the transport properties of molecular junctions at multiple scales',
     # long_description=open('README.md').read(),
@@ -45,5 +47,5 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: POSIX :: Linux',
     ],
-    python_requires='>=3.9',
+    python_requires='>=3.10',
 )
