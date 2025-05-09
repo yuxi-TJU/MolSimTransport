@@ -3,13 +3,13 @@
 
 # **MolSimTransport: A Python package designed for the efficient calculation of transport properties in molecular junctions**
 
-### **v1.0.3 Release Notes**
+## **v1.0.3 Release Notes**
 
 **L1_XTB Module**: Added the ability to modify the coupling strength of the left and right electrodes separately using the `--CL` and `--CR` options (`-C` sets both simultaneously).
 
 **L3 Scheme**: Provided larger surface Green's function files for electrodes; users can select the appropriate electrode based on their needs
 
-### **Download link**
+## **Download link**
 
  `v1.0.2`  [OneDrive Download link](https://1drv.ms/u/c/8ba50a0504e6a517/ER87VtJizbZMu8WJ0pdjCi4BKi4xc53XNm0uokhEmnEb9A?download=1)
 
@@ -40,7 +40,6 @@ The QDHC model always adheres to a uniform structured workflow regardless of the
 
 A detailed working protocol for the study of the transport property of 1,3-BDT molecule, known for its destructive quantum-interference feature, has been also posted to vividly demonstrated the proceeding process.
 ![workflow](https://github.com/user-attachments/assets/3e20bd3a-60d7-4947-b17d-b582c4dcf2b4)
-
 
 ## Benchmark studies
 To validate the performance of _**MolSimTransport**_, it was applied to the following six molecular junction transport cases from the literature, forming a comprehensive benchmark test. These carefully selected cases span all levels of the QDHC strategy, ensuring the breadth and typicality of the test. The rapid replication of these cases demonstrates the high efficiency of the QDHC strategy in handling problems with different precision requirements and its unique ability to capture key factors in the transport process.
@@ -76,7 +75,7 @@ To validate the performance of _**MolSimTransport**_, it was applied to the foll
 ![case6](https://github.com/user-attachments/assets/86d6eb84-2aad-42b3-ace8-ef730191e340)
 
 
-### Repository Contents
+## **Repository Contents**
 - The `MolSimTransport` directory contains the calculation scripts and atomic data files.
 
 - The `share` directory contains the following:
