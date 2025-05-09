@@ -3,7 +3,7 @@
 
 # **MolSimTransport: A Python package designed for the efficient calculation of transport properties in molecular junctions**
 
-### Download the package's using this OneDrive link: 
+### Download link 
 
   [OneDrive Download link](https://1drv.ms/u/c/8ba50a0504e6a517/ER87VtJizbZMu8WJ0pdjCi4BKi4xc53XNm0uokhEmnEb9A?download=1)
 
