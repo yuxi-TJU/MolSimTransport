@@ -1,3 +1,5 @@
+[![DOI](https://img.shields.io/badge/DOI-10.1021/acs.jctc.4c01711-blue)](https://pubs.acs.org/doi/10.1021/acs.jctc.4c01711)
+
 # **MolSimTransport: A Python package designed for the efficient calculation of transport properties in molecular junctions**
 
 
