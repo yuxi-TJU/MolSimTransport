@@ -23,6 +23,8 @@ def get_options(argv):
     parser.add_argument('-L', '--left', type=int, nargs='+', help='Input left atom numbers (separated by space)')
     parser.add_argument('-R', '--right', type=int, nargs='+', help='Input right atom numbers (separated by space)')
     parser.add_argument('-C', '--coupling', type=float, default=1.0, help='Input GammaL_wba (The default is GammaL_wba = GammaR_wba) [default: %(default)s]')
+    parser.add_argument('--CL', type=float, default=None, help='Specify left electrode coupling GammaL_wba (overrides -C if set)')
+    parser.add_argument('--CR', type=float, default=None, help='Specify right electrode coupling GammaR_wba (overrides -C if set)')
     parser.add_argument('-m', '--method', type=int, choices=[1, 2], default=1, help='Specify the calculation method: 1 for GFN1-xTB, 2 for GFN2-xTB [default: %(default)s]')
     parser.add_argument('--Erange', type=float, default=4.0, help='Specify the energy range (from \'Fermi energy\' plus or minus \'Erange\')[default: %(default)s eV]')
     parser.add_argument('--Enum', type=int, default=800, help='Specify the energy number [default: %(default)s]')
@@ -98,7 +100,10 @@ def main(options):
     left_indexes, _ = calculate_orbital_indexes(options.left, elements, atomic_orbitals)
     right_indexes, N = calculate_orbital_indexes(options.right, elements, atomic_orbitals)
 
-    GammaL_wba = GammaR_wba = options.coupling
+    # GammaL_wba = GammaR_wba = options.coupling
+    GammaL_wba = options.CL if options.CL is not None else options.coupling
+    GammaR_wba = options.CR if options.CR is not None else options.coupling
+    
     Trans = np.zeros(E_num, dtype=complex)
     print("Starting transport calculation...")
 
