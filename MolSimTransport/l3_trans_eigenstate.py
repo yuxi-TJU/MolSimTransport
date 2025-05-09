@@ -28,7 +28,17 @@ def main():
         raise FileNotFoundError("No file found starting with 'device_s' and ending with '.dat'")
     s = np.loadtxt(s_file_name, skiprows=5)
 
-    npl = 324
+    # Choosing electrode type
+    elec_type = input(">>> Choose electrode type (s / l): ").strip().lower()
+
+    if elec_type == "l":
+        npl = 972
+    elif elec_type == "s":
+        npl = 324
+    else:
+        raise ValueError("Invalid input! Please enter 's' or 'l'.")
+
+    # npl = 972
     nc = len(s)
     nm = nc - 2 * npl
     s_m = s[npl:npl+nm, npl:npl+nm]

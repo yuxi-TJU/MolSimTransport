@@ -25,6 +25,18 @@ def main():
     InputEnergyInterval = float(sys.argv[5])  # Fifth argument: Energy interval
     output_dir = sys.argv[6]  # Sixth argument: Output file path
     save_mat_files = sys.argv[7].lower() == 'true'  # Seventh argument: Whether to generate mat files
+    electrode_type = sys.argv[8].strip().lower()  # electrode type: large or small electrode
+    
+    elec_configs = {
+        's': {'share_dir': 'share.l3_elec_small', 'efermi': -12.0666},
+        'l': {'share_dir': 'share.l3_elec_large', 'efermi': -11.8723}
+    }
+
+    if electrode_type not in elec_configs:
+        raise ValueError("Invalid electrode type: must be 's' or 'l'")
+
+    share_dir = elec_configs[electrode_type]['share_dir']
+    efermi = elec_configs[electrode_type]['efermi']
 
     # Define the path to the POSCAR file, uniform electric field strength and direction
     # poscar_file = str(input("Enter POSCAR file name(e.g., coor.POSCAR): "))
@@ -62,11 +74,11 @@ def main():
     print("DFTB+ calculation done!")
 
     # Load electrode data
-    h1_file_path = files('share.l3_elec').joinpath('h1-kpoint-avg.dat')
+    h1_file_path = files(share_dir).joinpath('h1-kpoint-avg.dat')
     h1_2pl_data = np.loadtxt(h1_file_path)
     h1_2pl_kavg = h1_2pl_data[:, 0::2] + 1j * h1_2pl_data[:, 1::2]
 
-    h2_file_path = files('share.l3_elec').joinpath('h2-kpoint-avg.dat')
+    h2_file_path = files(share_dir).joinpath('h2-kpoint-avg.dat')
     h2_2pl_data = np.loadtxt(h2_file_path)
     h2_2pl_kavg = h2_2pl_data[:, 0::2] + 1j * h2_2pl_data[:, 1::2]
 
@@ -128,7 +140,7 @@ def main():
     # Select specific energy points and interpolations
     specific_energy_points = np.arange(-15, -4, 1)
 
-    mat_file_path = files('share.l3_elec').joinpath('sgf_k10_specific_results_15to5_0.1.mat')
+    mat_file_path = files(share_dir).joinpath('sgf_k10_elec_15to5_0.1.mat')
     pre_saved_sgf_data = sio.loadmat(mat_file_path)
 
     sgfl_specific = pre_saved_sgf_data['sgfl'][0]

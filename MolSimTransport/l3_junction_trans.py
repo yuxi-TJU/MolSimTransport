@@ -20,6 +20,18 @@ def main():
     poscar_file = str(input(">>> Enter POSCAR file name(e.g., coor.POSCAR): "))
     dftb_input_file = "dftb_in.hsd"
     dftb_output_file = "dftb_output.out"
+    
+    # Choosing electrode type
+    elec_type = input(">>> Choose electrode type (s / l): ").strip().lower()
+
+    if elec_type == "l":
+        share_dir = 'share.l3_elec_large'
+        efermi = -12.0666
+    elif elec_type == "s":
+        share_dir = 'share.l3_elec_small'
+        efermi = -12.3777
+    else:
+        raise ValueError("Invalid input! Please enter 's' or 'l'.")
 
     # Define the energy range
     InputEnergyRange = float(input(">>> Specify the energy range (from 'Fermi energy' plus or minus 'energy range', The value cannot exceed 4 eV, e.g., 2)(float): "))
@@ -54,18 +66,20 @@ def main():
     os.rename("dftb_in.hsd", "2nd_dftb_in.hsd")
     print("2nd DFTB+ calculation done!")
 
+    t1 = time.time()
+    elapsed_time1 = (t1 - start_time) / 60
+    print(f"DFTB+ calculation executed in {elapsed_time1:.2f} minutes.")
+
     # dat_file_path = os.environ.get('DAT_FILE_PATH')
 
     # Load electrode data
-    h1_file_path = files('share.l3_elec').joinpath('h1-kpoint-avg.dat')
+    h1_file_path = files(share_dir).joinpath('h1-kpoint-avg.dat')
     h1_2pl_data = np.loadtxt(h1_file_path)
     h1_2pl_kavg = h1_2pl_data[:, 0::2] + 1j * h1_2pl_data[:, 1::2]
 
-    h2_file_path = files('share.l3_elec').joinpath('h2-kpoint-avg.dat')
+    h2_file_path = files(share_dir).joinpath('h2-kpoint-avg.dat')
     h2_2pl_data = np.loadtxt(h2_file_path)
     h2_2pl_kavg = h2_2pl_data[:, 0::2] + 1j * h2_2pl_data[:, 1::2]
-
-    efermi = -12.3377
 
     # Load the complete system data
     h = 27.2114 * np.loadtxt('device_h.dat', skiprows=5)
@@ -116,7 +130,7 @@ def main():
     # Select specific energy points and interpolations
     specific_energy_points = np.arange(-15, -4, 1)
 
-    mat_file_path = files('share.l3_elec').joinpath('sgf_k10_specific_results_15to5_0.1.mat')
+    mat_file_path = files(share_dir).joinpath('sgf_k10_elec_15to5_0.1.mat')
     pre_saved_sgf_data = sio.loadmat(mat_file_path)
 
     sgfl_specific = pre_saved_sgf_data['sgfl'][0]
@@ -132,15 +146,22 @@ def main():
     prepared_sgfl = [sgfl_specific[i] for i in indices]
     prepared_sgfr = [sgfr_specific[i] for i in indices]
 
-    print("Starting transport calculation...")
-
     E_num = math.ceil((Emax - Emin) / InputEnergyInterval)
     Erange = np.round(np.linspace(Emin, Emax, E_num+1), 5)
 
     # Call the interpolation function
+    print("Starting interpolation calculation...")
     sgfl_interp_mat, sgfr_interp_mat = interpolate_sgf_matrices(selected_energy_points, prepared_sgfl, prepared_sgfr, Erange)
+    t2 = time.time()
+    elapsed_time2 = (t2 - start_time) / 60
+    print(f"Interpolation calculation executed in {elapsed_time2:.2f} minutes.")
 
+    print("Starting transmission calculation...")
     Trans = l3_calculate_transmission(Erange, sgfl_interp_mat, sgfr_interp_mat, h_ml, s_ml, h_mr, s_mr, h_m, s_m)
+    # Trans = l3_calculate_transmission_parallel(Erange, sgfl_interp_mat, sgfr_interp_mat,h_ml, s_ml, h_mr, s_mr, h_m, s_m)
+    t3 = time.time()
+    elapsed_time3 = (t3 - start_time) / 60
+    print(f"Transmission calculation executed in {elapsed_time3:.2f} minutes.")
 
     # Save transmission file
     np.savetxt('Transmission.txt', np.column_stack((Erange + offset_efermi, np.abs(Trans))),
@@ -160,6 +181,7 @@ def main():
 
     print(" ")
     print("Fermi energy (eV): ", -offset_efermi)
+    print(f"Using electrode data from: {share_dir}")
     print(" ")
     end_time = time.time()
     elapsed_time = (end_time - start_time) / 60
