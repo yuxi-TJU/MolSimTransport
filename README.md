@@ -1,4 +1,4 @@
-# **_MolSimTransport v1.0.2_: A Python package designed for the efficient calculation of transport properties in molecular junctions**
+# **MolSimTransport: A Python package designed for the efficient calculation of transport properties in molecular junctions**
 
 
 ## **Introduction**
@@ -66,7 +66,7 @@ To validate the performance of _**MolSimTransport**_, it was applied to the foll
 
   [OneDrive Download link](https://1drv.ms/u/c/8ba50a0504e6a517/ER87VtJizbZMu8WJ0pdjCi4BKi4xc53XNm0uokhEmnEb9A?download=1)
 
-
+### Repository Contents
 - The `MolSimTransport` directory contains the calculation scripts and atomic data files.
 
 - The `share` directory contains the following:
