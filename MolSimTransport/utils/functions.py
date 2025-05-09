@@ -3,6 +3,7 @@ import scipy.linalg as la
 import scipy.io as sio
 from scipy.linalg import eigh
 from scipy.interpolate import PchipInterpolator
+from concurrent.futures import ProcessPoolExecutor, as_completed
 
 #######################################
 ############  L1-FUNCTION  ############
@@ -159,6 +160,62 @@ def save_gamma_matrices_mat(energy, Gr, GammaL, GammaR, Gr_dict, GammaL_dict, Ga
     GammaL_dict[f'GammaL_E{energy:.4f}'] = GammaL
     GammaR_dict[f'GammaR_E{energy:.4f}'] = GammaR
 
+##########################################################
+
+def calc_trans_at_energy(E, sgf_left, sgf_right, h_ml, s_ml, h_mr, s_mr, h_m, s_m, eta=1e-8):
+    tCL = h_ml - E * s_ml
+    tLC = tCL.conj().T
+    tCR = h_mr - E * s_mr
+    tRC = tCR.conj().T
+
+    Sigma_L = tCL @ sgf_left @ tLC
+    Sigma_R = tCR @ sgf_right @ tRC
+
+    Gamma_L = -2 * np.imag(Sigma_L)
+    Gamma_R = -2 * np.imag(Sigma_R)
+
+    h_eff = h_m + Sigma_L + Sigma_R
+    Gr = np.linalg.inv((E + 1j * eta) * s_m - h_eff)
+
+    T_matrix = Gamma_L @ Gr @ Gamma_R @ Gr.conj().T
+    T = np.real(np.trace(T_matrix))
+
+    return E, T, Gr, Gamma_L, Gamma_R
+
+
+def l3_calculate_transmission_parallel(Erange, sgfl_interp_mat, sgfr_interp_mat, h_ml, s_ml, h_mr, s_mr, h_m, s_m, output_path=''):
+    Trans = np.zeros(len(Erange))
+    Gr_dict = {}
+    GammaL_dict = {}
+    GammaR_dict = {}
+
+    def task(i):
+        E = Erange[i]
+        sgf_left = np.squeeze(sgfl_interp_mat[:, :, i])
+        sgf_right = np.squeeze(sgfr_interp_mat[:, :, i])
+        return calc_trans_at_energy(E, sgf_left, sgf_right, h_ml, s_ml, h_mr, s_mr, h_m, s_m)
+
+    with ProcessPoolExecutor() as executor:
+        futures = [executor.submit(task, i) for i in range(len(Erange))]
+
+        for future in as_completed(futures):
+            E, T, Gr, GammaL, GammaR = future.result()
+            idx = np.where(np.isclose(Erange, E))[0][0]
+            Trans[idx] = T
+
+            Gr_dict[f'Gr_E{E:.4f}'] = Gr
+            GammaL_dict[f'GammaL_E{E:.4f}'] = GammaL
+            GammaR_dict[f'GammaR_E{E:.4f}'] = GammaR
+
+    # save matrix files
+    sio.savemat(f'{output_path}Gr_matrices.mat', Gr_dict)
+    sio.savemat(f'{output_path}GammaL_matrices.mat', GammaL_dict)
+    sio.savemat(f'{output_path}GammaR_matrices.mat', GammaR_dict)
+
+    return Trans
+
+
+##########################################################
 def l3_calculate_transmission(Erange, sgfl_interp_mat, sgfr_interp_mat, h_ml, s_ml, h_mr, s_mr, h_m, s_m, output_path=''):
     Trans = np.zeros(len(Erange))
     Gr_dict = {}
