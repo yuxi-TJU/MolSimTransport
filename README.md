@@ -19,7 +19,7 @@
 
  `v1.0.3`  [BaiduNetdisk](https://pan.baidu.com/s/1TS8KmgvpfzPP9xUWz38uxg?pwd=6vp8)
  
- `v1.0.2`  [OneDrive](https://1drv.ms/u/c/8ba50a0504e6a517/ER87VtJizbZMu8WJ0pdjCi4BKi4xc53XNm0uokhEmnEb9A?download=1)
+ `v1.0.2`  [Google Drive](https://drive.google.com/drive/folders/1a8Q1IHwsEGjwQagIoJGCap-Kxws3Eiju?usp=sharing)
 
 **After the software package is extracted, extract the two electrode files into `~/share/l3_elec_large` and `~/share/l3_elec_small` respectively.**
 
