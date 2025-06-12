@@ -28,6 +28,7 @@ def get_options(argv):
     parser.add_argument('-m', '--method', type=int, choices=[1, 2], default=1, help='Specify the calculation method: 1 for GFN1-xTB, 2 for GFN2-xTB [default: %(default)s]')
     parser.add_argument('--Erange', type=float, default=4.0, help='Specify the energy range (from \'Fermi energy\' plus or minus \'Erange\')[default: %(default)s eV]')
     parser.add_argument('--Enum', type=int, default=800, help='Specify the energy number [default: %(default)s]')
+    parser.add_argument('--charge', type=float, default=0.0, help='Total charge of the molecule (positive = cation, negative = anion) [default: %(default)s]')
     parser.add_argument('--interactive', action='store_true', help='Use interactive mode to input parameters')
     return parser.parse_args(argv)
 
@@ -75,7 +76,7 @@ def main(options):
     method_mapping = {1: "GFN1-xTB", 2: "GFN2-xTB"}
     chosen_method = method_mapping[options.method]
     
-    calc = Calculator(method=chosen_method, numbers=numbers, positions=positions)
+    calc = Calculator(method=chosen_method, numbers=numbers, positions=positions, charge=options.charge)
     calc.set("save-integrals", 1)
     res = calc.singlepoint()
     
@@ -126,7 +127,8 @@ def main(options):
     plt.savefig('Transmission.png')
 
     print(" ")
-    print(f"Chosen method:  {chosen_method}")
+    print(f"Method:  {chosen_method}")
+    print(f"Total charge     : {options.charge:+.2f} e")
     print("Total orbitals: ", N)
     print("Indexes of the atomic basis on the left (start, end): ", [(x + 1, y) for (x, y) in left_indexes])
     print("Indexes of the atomic basis on the right (start, end): ", [(x + 1, y) for (x, y) in right_indexes])
