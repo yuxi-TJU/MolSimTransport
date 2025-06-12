@@ -9,11 +9,11 @@
 
 ### **v1.0.3 Release Notes**
 
-**L1_XTB Module**: L1_XTB now supports setting the system's charge using the `--charge` option.
+ - L1_XTB now supports setting the system's charge using the `--charge` option.
 
-**L1_XTB Module**: L1_XTB now allows independent specification of the left and right electrode couplings via the `--CL` and `--CR` options; the `-C` option still sets both to the same value by default.
+ - L1_XTB now allows independent specification of the left and right electrode couplings via the `--CL` and `--CR` options; the `-C` option still sets both to the same value by default.
 
-**L3 Scheme**: Provided larger surface Green's function files for electrodes; users can select the appropriate electrode based on their needs
+ - **L3 Scheme**: Provided larger surface Green's function files for electrodes; users can select the appropriate electrode based on their needs
 
 ### **Download link**
 
