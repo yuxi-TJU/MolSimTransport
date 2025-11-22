@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/aef55b07-3889-4c50-acdf-94a534c6455e" alt="mst_logo" width="160" />
+  <img src="https://github.com/user-attachments/assets/aef55b07-3889-4c50-acdf-94a534c6455e" alt="mst_logo" width="480" />
 </p>
 
 <p align="center">
@@ -101,4 +101,5 @@ To validate the performance of _**MolSimTransport**_, it was applied to the foll
 - The `test_file` directory holds test files for all three schemes, consistent with those provided in the manual.
 
 - The `old-version-benchmark` directory contains benchmark test files from previous MATLAB versions(some are showcased in this README). You can also find these files in the `matlab-old-version` branch.
+
 
